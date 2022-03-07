@@ -77,3 +77,15 @@
 ```text
 	通过学习这个单服竞技场模块，我明白了，模板服务的创建和初始化顺序，以及调用关系，在以后的代码开发中，在Agent上实现相关单服逻辑，主要是得根据策划所需完成Agent与单服节点的信息通信。因为竞技场的多人互动性，所以需要将游戏数据放入单服节点处，供玩家操作时进行交互更改数据。在PubGame创建竞技场数据信息时，设计时将竞技场数据，和竞技场玩家对象分开设计存放，便于前后端的数据进行交互，也便于在书写代码时，之后的逻辑维护。可以通过相应的竞技场数据的字段精准定位到竞技场玩家对象的玩家个人数据。
 ```
+
+## BattleHandler
+```text
+	BattleModule.BeginBattleFight()   ====>  获取战斗结果
+	{	
+		local fightData = battleComp:PackPlayerFightData()
+		{
+			--拼接战斗数据
+		}
+		return  battleComp:StarFight(playerObj,fightData)
+	}
+```
