@@ -102,7 +102,7 @@
 ```
 ```lua
 self:PackLeftFightData(playerObj, fightData, extraTb)
-	
+
 ```
 
 						self:PackRightFightData(playerObj, fightId, fightData, extraTb)
@@ -110,3 +110,4 @@ self:PackLeftFightData(playerObj, fightData, extraTb)
 						self:PackEndFightData(playerObj, fightData, extraTb)
 						self:PackCombatRestraint(fightData)
 						self:PackGamePlayInfo(gamePlayType,extraTb.gamePlayInfo)
+						
