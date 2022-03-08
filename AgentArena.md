@@ -85,7 +85,28 @@
 		local fightData = battleComp:PackPlayerFightData()
 		{
 			--拼接战斗数据
+			battelHandler:BattleModule.GetBattleArrayHandler
+			通过BaseBattleArrayHandler：PackPlayerFightData(playerObj,fightId,gamePlayType,extraTb)
+				{
+					所有战斗数据的入口，玩法的独特玩法通过extraTb传,
+						self:PackLeftFightData(playerObj, fightData, extraTb)
+						self:PackRightFightData(playerObj, fightId, fightData, extraTb)
+						self:PackInitRageData(fightId, fightData.fightSideDatas)
+						self:PackEndFightData(playerObj, fightData, extraTb)
+						self:PackCombatRestraint(fightData)
+						self:PackGamePlayInfo(gamePlayType,extraTb.gamePlayInfo)
+				}
 		}
 		return  battleComp:StarFight(playerObj,fightData)
 	}
 ```
+```lua
+self:PackLeftFightData(playerObj, fightData, extraTb)
+	
+```
+
+						self:PackRightFightData(playerObj, fightId, fightData, extraTb)
+						self:PackInitRageData(fightId, fightData.fightSideDatas)
+						self:PackEndFightData(playerObj, fightData, extraTb)
+						self:PackCombatRestraint(fightData)
+						self:PackGamePlayInfo(gamePlayType,extraTb.gamePlayInfo)
