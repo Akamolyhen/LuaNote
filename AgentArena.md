@@ -110,5 +110,4 @@ self:PackLeftFightData(playerObj, fightData, extraTb)
 						self:PackEndFightData(playerObj, fightData, extraTb)
 						self:PackCombatRestraint(fightData)
 						self:PackGamePlayInfo(gamePlayType,extraTb.gamePlayInfo)
-						
-						
+		
